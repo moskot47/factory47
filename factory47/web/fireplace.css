@@ -76,13 +76,4 @@ body {
   font-size: 1.05rem;
 }
 
-.site-footer {
-  position: fixed;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.8rem;
-  color: #a8a8a8;
-  opacity: 0.7;
-  pointer-events: none;
-}
+
