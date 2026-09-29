@@ -14,9 +14,16 @@ class Handler(BaseHTTPRequestHandler):
             "<style>"
             "body{display:flex;align-items:center;justify-content:center;"
             "min-height:100vh;margin:0;font-family:system-ui,sans-serif;"
-            "background:#0f172a;color:#f1f5f9}"
-            "h1{font-size:2rem;font-weight:600}"
+            "color:#f1f5f9;overflow:hidden}"
+            ".bg{position:fixed;inset:0;z-index:-1;"
+            "background:linear-gradient(-45deg,#0f172a,#1e3a8a,#7c3aed,#0f172a);"
+            "background-size:400% 400%;"
+            "animation:gradient 12s ease infinite}"
+            "@keyframes gradient{0%{background-position:0% 50%}"
+            "50%{background-position:100% 50%}100%{background-position:0% 50%}}"
+            "h1{font-size:2rem;font-weight:600;position:relative;z-index:1}"
             "</style></head>"
+            f"<body><div class='bg'></div><h1>{message}</h1></body></html>"
             f"<body><h1>{message}</h1></body></html>"
         ).encode()
         self.send_response(200)
