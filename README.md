@@ -5,11 +5,11 @@ A minimal Python starter project.
 ## Run
 
 ```bash
-python -m factory47
+python3 -m factory47
 ```
 
 ## Test
 
 ```bash
-python -m unittest
+python3 -m unittest
 ```
