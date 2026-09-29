@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cozy Fireplace</title>
+  <link rel="stylesheet" href="fireplace.css" />
+</head>
+<body>
+  <canvas id="fireplace"></canvas>
+
+  <div class="overlay">
+    <h1>Cozy Fireplace</h1>
+    <button id="sound-toggle" class="sound-btn" aria-pressed="false">
+      <span class="icon">🔇</span>
+      <span class="label">Enable sound</span>
+    </button>
+  </div>
+
+  <audio id="fire-audio" loop preload="auto">
+    <source src="fireplace.wav" type="audio/wav" />
+  </audio>
+
+  <script src="fireplace.js"></script>
+</body>
+</html>

@@ -3,7 +3,10 @@ def greet(name: str = "world") -> str:
 
 
 def main() -> None:
-    print(greet())
+    """Start the cozy fireplace web app."""
+    from factory47.server import serve
+
+    serve()
 
 
 if __name__ == "__main__":
