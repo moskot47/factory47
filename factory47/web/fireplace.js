@@ -107,9 +107,9 @@
     const base = fireBase();
     const glowR = base.width * 1.7 * flicker;
     const glow = ctx.createRadialGradient(base.x, base.y, 0, base.x, base.y, glowR);
-    glow.addColorStop(0, `rgba(255, 140, 40, ${0.26 * flicker})`);
-    glow.addColorStop(0.4, `rgba(255, 90, 20, ${0.12 * flicker})`);
-    glow.addColorStop(1, "rgba(255, 60, 10, 0)");
+    glow.addColorStop(0, `rgba(80, 160, 255, ${0.26 * flicker})`);
+    glow.addColorStop(0.4, `rgba(40, 110, 255, ${0.12 * flicker})`);
+    glow.addColorStop(1, "rgba(20, 80, 255, 0)");
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, W, H);
   }
@@ -127,7 +127,7 @@
     ctx.roundRect(-w / 2, -h / 2, w, h, h / 2);
     ctx.fill();
     // glowing top edge where embers sit
-    ctx.fillStyle = `rgba(255, 120, 30, ${0.5 * flicker})`;
+    ctx.fillStyle = `rgba(90, 170, 255, ${0.5 * flicker})`;
     ctx.fillRect(-w / 2, -h / 2, w, 3);
     ctx.restore();
   }
@@ -145,7 +145,7 @@
     ctx.globalCompositeOperation = "lighter";
     for (const p of particles) {
       const life = p.life;
-      const hue = 50 * life; // yellow (50) -> red (0)
+      const hue = 190 + 40 * (1 - life); // cyan (190) -> deep blue (230)
       const light = 60 * life + 10;
       const alpha = life * 0.5;
       const r = p.size * (0.6 + 0.4 * flicker);
@@ -164,7 +164,7 @@
     ctx.globalCompositeOperation = "lighter";
     for (const e of embers) {
       const a = e.life * 0.9;
-      ctx.fillStyle = `rgba(255, ${180 + Math.floor(60 * e.life)}, 80, ${a})`;
+      ctx.fillStyle = `rgba(150, ${190 + Math.floor(60 * e.life)}, 255, ${a})`;
       ctx.beginPath();
       ctx.arc(e.x, e.y, e.size, 0, Math.PI * 2);
       ctx.fill();
